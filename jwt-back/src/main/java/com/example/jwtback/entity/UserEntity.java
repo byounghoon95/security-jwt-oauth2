@@ -17,11 +17,17 @@ public class UserEntity {
     private String name;
     private String password;
     private String role;
+    private String media;
 
-    public UserEntity(String username, String password, String name, String role) {
+    public UserEntity(String username, String password, String name, String role, String media) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.role = role;
+        this.media = media;
+    }
+
+    public void updateName(String name) {
+        this.name = name;
     }
 }

@@ -2,6 +2,7 @@ package com.example.jwtback.service;
 
 import com.example.jwtback.controller.dto.UserDTO;
 import com.example.jwtback.entity.UserEntity;
+import com.example.jwtback.enums.MediaType;
 import com.example.jwtback.exception.CustomException;
 import com.example.jwtback.exception.ErrorEnum;
 import com.example.jwtback.repository.UserRepository;
@@ -26,7 +27,7 @@ public class JoinService {
             throw new CustomException(ErrorEnum.EXIST_USER);
         }
 
-        UserEntity data = new UserEntity(username,bCryptPasswordEncoder.encode(password), request.getName(), "ROLE_USER");
+        UserEntity data = new UserEntity(username,bCryptPasswordEncoder.encode(password), request.getName(), "ROLE_USER", MediaType.OWN.name());
 
         return userRepository.save(data);
     }
