@@ -7,10 +7,14 @@ const Login = () => {
         navigate("/join")
     };
 
+    const handleLogin = () => {
+        navigate("/login")
+    };
+
     return (
         <div>
             <button onClick={handleJoin}>회원가입</button>
-            <button>로그인</button>
+            <button onClick={handleLogin}>로그인</button>
             <button>네이버로그인</button>
             <button>로그아웃</button>
         </div>
