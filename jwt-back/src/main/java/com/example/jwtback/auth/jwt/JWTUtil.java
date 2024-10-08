@@ -1,4 +1,4 @@
-package com.example.jwtback.auth;
+package com.example.jwtback.auth.jwt;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;

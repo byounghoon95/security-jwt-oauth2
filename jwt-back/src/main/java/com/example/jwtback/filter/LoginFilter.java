@@ -1,7 +1,7 @@
 package com.example.jwtback.filter;
 
-import com.example.jwtback.auth.CustomUserDetails;
-import com.example.jwtback.auth.JWTUtil;
+import com.example.jwtback.auth.jwt.CustomUserDetails;
+import com.example.jwtback.auth.jwt.JWTUtil;
 import com.example.jwtback.exception.ErrorEnum;
 import com.example.jwtback.response.CommonResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;

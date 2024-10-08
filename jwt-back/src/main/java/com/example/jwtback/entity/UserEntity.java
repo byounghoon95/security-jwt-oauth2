@@ -14,12 +14,14 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
+    private String name;
     private String password;
     private String role;
 
-    public UserEntity(String username, String password, String role) {
+    public UserEntity(String username, String password, String name, String role) {
         this.username = username;
         this.password = password;
+        this.name = name;
         this.role = role;
     }
 }

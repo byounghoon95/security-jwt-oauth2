@@ -3,7 +3,6 @@ package com.example.jwtback.controller.dto;
 import com.example.jwtback.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 public class UserDTO {
 
@@ -12,16 +11,19 @@ public class UserDTO {
     public static class JoinReq {
         private String username;
         private String password;
+        private String name;
     }
 
     @Getter
     public static class JoinRes {
         private String username;
         private String role;
+        private String name;
 
         public JoinRes(UserEntity user) {
             this.username = user.getUsername();
             this.role = user.getRole();
+            this.name = user.getName();
         }
     }
 }
