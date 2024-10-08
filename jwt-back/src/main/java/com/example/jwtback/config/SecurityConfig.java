@@ -1,6 +1,8 @@
 package com.example.jwtback.config;
 
-import com.example.jwtback.auth.JWTUtil;
+import com.example.jwtback.auth.jwt.JWTUtil;
+import com.example.jwtback.auth.oauth2.CustomOAuth2UserService;
+import com.example.jwtback.auth.oauth2.CustomSuccessHandler;
 import com.example.jwtback.filter.JWTFilter;
 import com.example.jwtback.filter.LoginFilter;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +27,8 @@ public class SecurityConfig {
 
     private final AuthenticationConfiguration authenticationConfiguration;
     private final JWTUtil jwtUtil;
+    private final CustomOAuth2UserService customOAuth2UserService;
+    private final CustomSuccessHandler customSuccessHandler;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -37,6 +41,13 @@ public class SecurityConfig {
 
         // http basic 인증 방식 disable
         http.httpBasic((auth) -> auth.disable());
+
+        //oauth2
+        http.oauth2Login((oauth2) -> oauth2
+                .userInfoEndpoint((userInfoEndpointConfig) -> userInfoEndpointConfig
+                        .userService(customOAuth2UserService))
+                .successHandler(customSuccessHandler)
+        );
 
         // 경로별 인가 작업
         http.authorizeHttpRequests((auth) -> auth
