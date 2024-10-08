@@ -1,21 +1,12 @@
-
-import { useNavigate } from 'react-router-dom';
-
 const Main = () => {
-    const navigate = useNavigate(); 
-
-    const handleJoin = () => {
-      navigate('/join');
-    };
-
     return (
-        <>
-          <button onClick={handleJoin}>회원가입</button>
-          <button>로그인</button>
-          <button>네이버로그인</button>
-          <button>로그아웃</button>
-        </>
+        <div>
+            <div>1번</div>
+            <div>2번</div>
+            <div>3번</div>
+            <div>4번</div>
+        </div>
     )
-  }
-  
-  export default Main;
+}
+
+export default Main;
