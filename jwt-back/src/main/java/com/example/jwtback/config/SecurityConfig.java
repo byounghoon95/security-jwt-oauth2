@@ -50,7 +50,7 @@ public class SecurityConfig {
 
         // 세션 설정
         http.sessionManagement((session) -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.cors((corsCustomizer -> corsCustomizer.configurationSource(request -> {
             CorsConfiguration configuration = new CorsConfiguration();

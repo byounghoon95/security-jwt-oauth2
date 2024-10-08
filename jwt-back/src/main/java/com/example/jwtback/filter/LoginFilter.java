@@ -32,7 +32,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         // 요청 경로 /login -> /api/user/login 변경
         setFilterProcessesUrl("/api/user/login");
     }
-    
+
     // form-login 에서 사용하는 필터라 default로 form-data 방식으로 데이터 전송해야함
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
