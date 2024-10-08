@@ -4,9 +4,11 @@ const Main = () => {
     const token = localStorage.getItem('jwt');
 
     const handleAPI = () => {
+        const auth = (token != null) ? `Bearer ${token}` : null;
+
         axios.get('/api/admin', {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: auth
             }
         })
             .then((res) => {
