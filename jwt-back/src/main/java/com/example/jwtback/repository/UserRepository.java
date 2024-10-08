@@ -7,4 +7,6 @@ public interface UserRepository {
     Boolean existsByUsername(String username);
 
     UserEntity save(UserEntity entity);
+
+    UserEntity findByUsername(String username);
 }

@@ -20,4 +20,9 @@ public class UserRepositoryImpl implements UserRepository {
     public UserEntity save(UserEntity entity) {
         return userJpaRepository.save(entity);
     }
+
+    @Override
+    public UserEntity findByUsername(String username) {
+        return userJpaRepository.findByUsername(username);
+    }
 }
