@@ -1,4 +1,4 @@
-package com.example.jwtback.auth;
+package com.example.jwtback.auth.jwt;
 
 import com.example.jwtback.entity.UserEntity;
 import com.example.jwtback.repository.UserRepository;
